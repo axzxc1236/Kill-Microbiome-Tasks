@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoincRpc", "BoincRpc\BoincRpc.csproj", "{0BCC2B35-DB4D-4DAD-8BA2-20F4705F2F11}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "KillMicrobiomeTasks", "KillMicrobiomeTasks\KillMicrobiomeTasks.vbproj", "{A34644A1-6E53-434F-8053-237AEFF775C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BCC2B35-DB4D-4DAD-8BA2-20F4705F2F11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BCC2B35-DB4D-4DAD-8BA2-20F4705F2F11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BCC2B35-DB4D-4DAD-8BA2-20F4705F2F11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BCC2B35-DB4D-4DAD-8BA2-20F4705F2F11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A34644A1-6E53-434F-8053-237AEFF775C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A34644A1-6E53-434F-8053-237AEFF775C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A34644A1-6E53-434F-8053-237AEFF775C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A34644A1-6E53-434F-8053-237AEFF775C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {375A6D42-8342-440D-9329-D71EF5B487CF}
+	EndGlobalSection
+EndGlobal

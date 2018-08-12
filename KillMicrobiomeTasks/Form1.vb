@@ -1,0 +1,29 @@
+﻿Public Class Form1
+    Private Async Sub Form1_LoadAsync(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim rpcClient As New BoincRpc.RpcClient,
+            key = My.Computer.FileSystem.ReadAllText("RPCkey.txt")
+        If Not My.Computer.FileSystem.FileExists("boinccmd.exe") Then
+            MsgBox("This program has to be place in the same folder where boinccmd.exe exists to run.", MsgBoxStyle.Critical)
+            End
+        End If
+        Await rpcClient.ConnectAsync("localhost", 31416)
+        While True
+            For Each result In Await rpcClient.GetResultsAsync
+                If Not result.Suspended And result.Name.StartsWith("MIP1") Then
+                    Dim startInfo As New ProcessStartInfo("boinccmd.exe", "--host localhost --passwd " & key & " --task http://www.worldcommunitygrid.org/ " & result.Name & " abort")
+                    startInfo.WindowStyle = ProcessWindowStyle.Hidden
+                    Process.Start(startInfo)
+                End If
+            Next
+            Threading.Thread.Sleep(600000)  'Checks every 10 minute
+        End While
+    End Sub
+
+    Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        Me.Hide()
+    End Sub
+
+    Sub Form1_Load() Handles MyBase.Load
+        Me.Opacity = 0
+    End Sub
+End Class
