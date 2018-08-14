@@ -6,11 +6,19 @@ This program is designed because [A bug that still not fixed yet](https://www.wo
 
 It works by connect to [GuiRpc](https://boinc.berkeley.edu/trac/wiki/GuiRpc), finds Microbiome Immunity Project tasks, abort them all and check again 10 minutes later.
 
-To use this program, put "KillMicrobiomeTasks.exe", "BoincRpc.dll" and "RPCkey.txt" at BOINC's install directory, open "gui_rpc_auth.cfg" and copy its content to "RPCkey.txt", and set a cron job to auto start "KillMicrobiomeTasks.exe" after 30 seconds after BOINC starts running. (Glary Utilities can do this easilly)
+## How to use this program
 
-if you can't find "gui_rpc_auth.cfg", it should be in [BOINC's data directory](https://boinc.berkeley.edu/wiki/BOINC_Data_directory).
+1. Install [Microsoft .Net Framework 4.6](https://www.microsoft.com/en-us/download/details.aspx?id=48137)
 
-[Microsoft .Net Framework 4.6](https://www.microsoft.com/en-us/download/details.aspx?id=48137) is used to make this program, and is required to run this program.
+2. Find [BOINC directory](https://boinc.berkeley.edu/wiki/BOINC_Data_directory) where you will put KillMicrobiomeTasks program.
+
+3. Download Release0.1.tar from [Releases](https://github.com/axzxc1236/Kill-Microbiome-Tasks/releases), decompress files to BOINC directory.
+
+4. Find "gui_rpc_auth.cfg" which should be in [BOINC data directory](https://boinc.berkeley.edu/wiki/BOINC_Data_directory), copy its content to "RPCkey.txt".
+
+5. Manually start KillMicrobiomeTasks.exe when BOINC is running.
+
+6. Set up a cron job to auto start "KillMicrobiomeTasks.exe" after 30 seconds after BOINC starts running. (Glary Utilities can do this easilly)
 
 License
 -------
