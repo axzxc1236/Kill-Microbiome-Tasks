@@ -9,7 +9,7 @@
         Await rpcClient.ConnectAsync("localhost", 31416)
         While True
             For Each result In Await rpcClient.GetResultsAsync
-                If Not result.Suspended And result.Name.StartsWith("MIP1") Then
+                If Not result.State = 6 And result.Name.StartsWith("MIP1") Then  'result.State = 6  =>  aborted
                     Dim startInfo As New ProcessStartInfo("boinccmd.exe", "--host localhost --passwd " & key & " --task http://www.worldcommunitygrid.org/ " & result.Name & " abort")
                     startInfo.WindowStyle = ProcessWindowStyle.Hidden
                     Process.Start(startInfo)
