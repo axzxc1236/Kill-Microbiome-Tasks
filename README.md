@@ -4,7 +4,7 @@ A program to stop Microbiome Immunity Project from running.
 
 This program is designed because [A bug that still not fixed yet](https://www.worldcommunitygrid.org/forums/wcg/viewthread_thread,40708). (and maybe won't be fixed at all)
 
-It works by connect to [GuiRpc](https://boinc.berkeley.edu/trac/wiki/GuiRpc), finds Microbiome Immunity Project tasks, suspend them all and check again 10 minutes later.
+It works by connect to [GuiRpc](https://boinc.berkeley.edu/trac/wiki/GuiRpc), finds Microbiome Immunity Project tasks, abort them all and check again 10 minutes later.
 
 To use this program, put "KillMicrobiomeTasks.exe", "BoincRpc.dll" and "RPCkey.txt" at BOINC's install directory, open "gui_rpc_auth.cfg" and copy its content to "RPCkey.txt", and set a cron job to auto start "KillMicrobiomeTasks.exe" after 30 seconds after BOINC starts running. (Glary Utilities can do this easilly)
 
