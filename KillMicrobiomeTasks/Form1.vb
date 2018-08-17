@@ -1,5 +1,10 @@
 ﻿Public Class Form1
     Private Async Sub Form1_LoadAsync(sender As Object, e As EventArgs) Handles MyBase.Load
+        If My.Application.CommandLineArgs.Count = 1 Then
+            If My.Application.CommandLineArgs(0) = "-wait2min" Then
+                Threading.Thread.Sleep(120000)
+            End If
+        End If
         Dim rpcClient As New BoincRpc.RpcClient,
             key = My.Computer.FileSystem.ReadAllText("RPCkey.txt")
         If Not My.Computer.FileSystem.FileExists("boinccmd.exe") Then
