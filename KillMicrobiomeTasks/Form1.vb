@@ -7,6 +7,12 @@
         End If
         Dim rpcClient As New BoincRpc.RpcClient,
             key = My.Computer.FileSystem.ReadAllText("RPCkey.txt")
+        Try
+            Await rpcClient.AuthorizeAsync(key)
+        Catch ex As System.InvalidOperationException
+            MsgBox("I don't have permission to stop BOINC tasks, please make sure RPCkey.txt has the right token/password to interact with BOINC.")
+            End
+        End Try
         If Not My.Computer.FileSystem.FileExists("boinccmd.exe") Then
             MsgBox("This program has to be place in the same folder where boinccmd.exe exists to run.", MsgBoxStyle.Critical)
             End
