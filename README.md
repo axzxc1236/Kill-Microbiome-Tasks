@@ -12,13 +12,13 @@ It works by connect to [GuiRpc](https://boinc.berkeley.edu/trac/wiki/GuiRpc), fi
 
 2. Find [BOINC directory](https://boinc.berkeley.edu/wiki/BOINC_Data_directory) where you will put KillMicrobiomeTasks program.
 
-3. Download Release0.1.tar from [Releases](https://github.com/axzxc1236/Kill-Microbiome-Tasks/releases), decompress files to BOINC directory.
+3. Download Release0.3.tar from [Releases](https://github.com/axzxc1236/Kill-Microbiome-Tasks/releases), decompress files to BOINC directory.
 
 4. Find "gui_rpc_auth.cfg" which should be in [BOINC data directory](https://boinc.berkeley.edu/wiki/BOINC_Data_directory), copy its content to "RPCkey.txt".
 
 5. Manually start KillMicrobiomeTasks.exe when BOINC is running.
 
-6. Set up a cron job to auto start "KillMicrobiomeTasks.exe" after 30 seconds after BOINC starts running. (Glary Utilities can do this easilly)
+6. (optional) run createstartup.bat to make KillMicrobiomeTasks.exe run everytime user logins.
 
 License
 -------
