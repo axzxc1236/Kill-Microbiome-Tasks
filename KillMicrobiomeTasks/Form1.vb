@@ -31,8 +31,4 @@
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         Me.Hide()
     End Sub
-
-    Sub Form1_Load() Handles MyBase.Load
-        Me.Opacity = 0
-    End Sub
 End Class
