@@ -1,5 +1,9 @@
-﻿Public Class Form1
-    Private Async Sub Form1_LoadAsync(sender As Object, e As EventArgs) Handles MyBase.Load
+﻿Module Module1
+    Sub Main()
+        Task.WaitAll(worker())
+    End Sub
+
+    Private Async Function worker() As Task
         If My.Application.CommandLineArgs.Count = 1 Then
             If My.Application.CommandLineArgs(0) = "-wait2min" Then
                 Threading.Thread.Sleep(120000)
@@ -26,9 +30,5 @@
             Next
             Threading.Thread.Sleep(600000)  'Checks every 10 minute
         End While
-    End Sub
-
-    Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-        Me.Hide()
-    End Sub
-End Class
+    End Function
+End Module
