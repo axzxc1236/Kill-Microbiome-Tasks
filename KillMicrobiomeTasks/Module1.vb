@@ -20,11 +20,13 @@
             MsgBox("I don't have permission to stop BOINC tasks, please make sure RPCkey.txt has the right token/password to interact with BOINC.")
             End
         End If
+        Dim startInfo As New ProcessStartInfo("boinccmd.exe") With {
+            .WindowStyle = ProcessWindowStyle.Hidden
+        }
         While True
             For Each result In Await rpcClient.GetResultsAsync
-                If Not result.State = 6 And result.Name.StartsWith("MIP1") Then  'result.State = 6  =>  aborted
-                    Dim startInfo As New ProcessStartInfo("boinccmd.exe", "--host localhost --passwd " & key & " --task http://www.worldcommunitygrid.org/ " & result.Name & " abort")
-                    startInfo.WindowStyle = ProcessWindowStyle.Hidden
+                If Not result.State = BoincRpc.ResultState.Aborted And result.Name.StartsWith("MIP1") Then
+                    startInfo.Arguments = "--host localhost --passwd " & key & " --task http://www.worldcommunitygrid.org/ " & result.Name & " abort"
                     Process.Start(startInfo)
                 End If
             Next
