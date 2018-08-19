@@ -4,12 +4,10 @@ if exist "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\KillMicrobiome
     del "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\KillMicrobiomeTasks.bat"
 )
 
-powershell "$s=(New-Object -COM WScript.Shell).CreateShortcut('%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\KillMicrobiomeTasks.lnk');$s.TargetPath=(Get-Item -Path ".\KillMicrobiomeTasks.exe").FullName;$s.Arguments='-wait2min';$s.Save()"
-
 if exist "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\KillMicrobiomeTasks.lnk" (
-    echo Start up item is successfully created.
+    del "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\KillMicrobiomeTasks.lnk"
+    echo Start up item is removed
 ) else (
-    echo Error! start up item is not created.
+    echo You didn't create a start up item
 )
- 
 pause
